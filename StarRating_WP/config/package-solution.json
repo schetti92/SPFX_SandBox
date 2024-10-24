@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-rn-d-projects-client-side-solution",
+    "id": "ef0025c1-90b3-41a9-bae8-fa3b9d1f4787",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.20.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "SPFXRnDProjects description"
+      },
+      "longDescription": {
+        "default": "SPFXRnDProjects description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "spfx-rn-d-projects Feature",
+        "description": "The feature that activates elements of the spfx-rn-d-projects solution.",
+        "id": "901ec134-2793-4882-ab4e-cdd4248febb3",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-rn-d-projects.sppkg"
+  }
+}
