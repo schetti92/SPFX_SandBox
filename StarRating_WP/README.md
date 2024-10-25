@@ -4,7 +4,7 @@
 
 The WP Star Rating is a SharePoint Framework (SPFx) web part that allows users to rate items using a star rating system. Users can provide feedback on selected lists, and the web part dynamically updates and displays ratings.
 
-![Intro](success.png)
+![Intro](./localImages/success.png)
 
 ## Features
 
