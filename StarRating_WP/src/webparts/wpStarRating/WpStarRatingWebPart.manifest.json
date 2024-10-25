@@ -22,8 +22,9 @@
     "description": { "default": "WPStarRating description" },
     "officeFabricIconFontName": "Page",
     "properties": {
-      "description": "WPStarRating",
-      "starRatedColor": "blue",
+      "description": "Please rate this page and provide your feedback.",
+      "starRatedColor": "#FFD700",
+      "starHoverColor": "#CFB53B",
       "numberOfStars": 5,
       "starDimension": 50,
       "starSpacing": 20

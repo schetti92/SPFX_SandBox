@@ -19,7 +19,8 @@ import { SPHttpClient, SPHttpClientResponse } from '@microsoft/sp-http';
 
 
 export interface IWpStarRatingWebPartProps {
-  selectedList: string;
+  selectedListUserFeedback: string;
+  selectedListFeedbackDetail: string;
   description: string;
   rating: number;
   numberOfStars: number;
@@ -31,29 +32,26 @@ export interface IWpStarRatingWebPartProps {
 }
 
 export default class WpStarRatingWebPart extends BaseClientSideWebPart<IWpStarRatingWebPartProps> {
-
-  //private _isDarkTheme: boolean = false;
-  //private _environmentMessage: string = '';
-
   private listsDropdownOptions: IPropertyPaneDropdownOption[] = [];
 
   public render(): void {
     const element: React.ReactElement<IWpStarRatingProps> = React.createElement(
       WpStarRating,
       {
-        selectedList: this.properties.selectedList,
+        selectedListUserFeedback: this.properties.selectedListUserFeedback,
+        selectedListFeedbackDetail: this.properties.selectedListFeedbackDetail,
         description: this.properties.description,
         userDisplayName: this.context.pageContext.user.displayName,
         rating: 5,
         numberOfStars: this.properties.numberOfStars,
-        changeRating: this.onRatingChange,
         starRatedColor: this.properties.starRatedColor,
         starHoverColor: this.properties.starHoverColor,
         starEmptyColor: this.properties.starEmptyColor,
         starDimension: this.properties.starDimension,
         starSpacing: this.properties.starSpacing,
         webURL: this.context.pageContext.web.absoluteUrl,
-        context: this.context
+        context: this.context,
+        currentPageUrl: this.context.pageContext.web.absoluteUrl,
       }
     );
     ReactDom.render(element, this.domElement);
@@ -75,7 +73,7 @@ export default class WpStarRatingWebPart extends BaseClientSideWebPart<IWpStarRa
       .then((data) => {
         const options: IPropertyPaneDropdownOption[] = data.value.map((list: any) => {
           return {
-            key: JSON.stringify({ id: list.Id, title: list.Title }), 
+            key: JSON.stringify({ id: list.Id, title: list.Title }),
             text: list.Title
           };
         });
@@ -91,12 +89,6 @@ export default class WpStarRatingWebPart extends BaseClientSideWebPart<IWpStarRa
       });
     }
   }
-
-
-  private onRatingChange = (newRating: number) => {
-    this.properties.rating = newRating;  // Update the rating state
-    this.render();  // Re-render the component to reflect the updated rating
-  };
 
   protected onThemeChanged(currentTheme: IReadonlyTheme | undefined): void {
     if (!currentTheme) {
@@ -135,8 +127,13 @@ export default class WpStarRatingWebPart extends BaseClientSideWebPart<IWpStarRa
                 PropertyPaneTextField('description', {
                   label: strings.DescriptionFieldLabel
                 },),
-                PropertyPaneDropdown('selectedList', {
-                  label: 'Site lists',
+                PropertyPaneDropdown('selectedListUserFeedback', {
+                  label: 'User feedback List',
+                  options: this.listsDropdownOptions,
+                  disabled: this.listsDropdownOptions.length === 0,
+                }),
+                PropertyPaneDropdown('selectedListFeedbackDetail', {
+                  label: 'Feedback List',
                   options: this.listsDropdownOptions,
                   disabled: this.listsDropdownOptions.length === 0,
                 })
@@ -161,12 +158,12 @@ export default class WpStarRatingWebPart extends BaseClientSideWebPart<IWpStarRa
                 PropertyPaneTextField('starHoverColor', {
                   label: 'Star Hover Color',
                   description: 'Set the color for stars on hover (e.g., red, #FF0000)',
-                 // value: 'blue'  // Default color for stars on hover
+                  // value: 'blue'  // Default color for stars on hover
                 }),
                 PropertyPaneTextField('starEmptyColor', {
                   label: 'Star Empty Color',
                   description: 'Set the color for empty stars (e.g., gray, #808080)',
-                 // value: 'red'  // Default color for empty stars
+                  // value: 'red'  // Default color for empty stars
                 }),
                 PropertyPaneSlider('starDimension', {
                   label: 'Star Dimension',

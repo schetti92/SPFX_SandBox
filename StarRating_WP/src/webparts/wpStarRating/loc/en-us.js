@@ -1,6 +1,6 @@
 define([], function() {
   return {
-    "PropertyPaneDescription": "Description",
+    "PropertyPaneDescription": "Please Rate this page and provide your comments",
     "BasicGroupName": "List Properties",
     "StarRatingPropGroupName": "Star Rating Properties",
     "DescriptionFieldLabel": "Description Field",

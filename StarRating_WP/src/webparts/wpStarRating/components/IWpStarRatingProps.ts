@@ -1,7 +1,8 @@
 import { WebPartContext } from "@microsoft/sp-webpart-base";
 
 export interface IWpStarRatingProps {
-  selectedList: string;
+  selectedListUserFeedback: string;
+  selectedListFeedbackDetail: string;
   description: string;
   userDisplayName: string;
   rating: number;
@@ -11,9 +12,7 @@ export interface IWpStarRatingProps {
   starEmptyColor: string;
   starDimension: string;
   starSpacing: string;
-  changeRating: (newRating: number) => void;
   webURL: string;
   context: WebPartContext;
-  
-  
+  currentPageUrl: string;
 }
