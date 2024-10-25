@@ -1,73 +1,26 @@
-# spfx-rn-d-projects
+# WP Star Rating Web Part with SharePoint Lists
 
-## Summary
+## Overview
 
-Short summary on functionality and used technologies.
+The WP Star Rating is a SharePoint Framework (SPFx) web part that allows users to rate items using a star rating system. Users can provide feedback on selected lists, and the web part dynamically updates and displays ratings.
 
-[picture of the solution in action, if possible]
-
-## Used SharePoint Framework Version
-
-![version](https://img.shields.io/badge/version-1.20.0-green.svg)
-
-## Applies to
-
-- [SharePoint Framework](https://aka.ms/spfx)
-- [Microsoft 365 tenant](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
-
-> Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
-
-## Prerequisites
-
-> Any special pre-requisites?
-
-## Solution
-
-| Solution    | Author(s)                                               |
-| ----------- | ------------------------------------------------------- |
-| folder name | Author details (name, company, twitter alias with link) |
-
-## Version history
-
-| Version | Date             | Comments        |
-| ------- | ---------------- | --------------- |
-| 1.1     | March 10, 2021   | Update comment  |
-| 1.0     | January 29, 2021 | Initial release |
-
-## Disclaimer
-
-**THIS CODE IS PROVIDED _AS IS_ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
-
----
-
-## Minimal Path to Awesome
-
-- Clone this repository
-- Ensure that you are at the solution folder
-- in the command-line run:
-  - **npm install**
-  - **gulp serve**
-
-> Include any additional steps as needed.
+![Intro](success.png)
 
 ## Features
 
-Description of the extension that expands upon high-level summary above.
+- **Star Rating**: Users can select a rating from 1 to 10 stars. (star count can be configure from Properties pane)
+- **Feedback Comment**: Optionally, users can provide additional comments along with their ratings.
+- **Dynamic Feedback Submission**: The web part submits feedback to specified SharePoint lists and updates existing ratings.
+- **Customizable Styles**: Easily customizable through CSS modules.
 
-This extension illustrates the following concepts:
+## Prerequisites
 
-- topic 1
-- topic 2
-- topic 3
+- Node.js (LTS version)
+- Yeoman
+- SharePoint Framework (SPFx) developer tools
+- A SharePoint Online site for deployment and testing
 
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
+## Usage
 
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
-
-## References
-
-- [Getting started with SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
-- [Building for Microsoft teams](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/build-for-teams-overview)
-- [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
-- [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
-- [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
+After deploying the web part, you can add it to any page in your SharePoint site.
+Configure the required properties in the web part settings panel, such as the lists for user feedback and feedback detail.
