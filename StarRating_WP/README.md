@@ -13,6 +13,12 @@ The WP Star Rating is a SharePoint Framework (SPFx) web part that allows users t
 - **Dynamic Feedback Submission**: The web part submits feedback to specified SharePoint lists and updates existing ratings.
 - **Customizable Styles**: Easily customizable through CSS modules.
 
+![Intro](./localImages/starGIF.gif)
+
+## Star Rating Component
+
+This web part utilizes the [React Star Ratings component](https://github.com/ekaun/react-star-ratings) to provide a user-friendly star rating experience. This component allows for customizable star dimensions, colors, and spacing, enhancing the overall look and feel of the rating system.
+
 ## Prerequisites
 
 - Node.js (LTS version)
