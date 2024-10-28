@@ -30,3 +30,5 @@ This web part utilizes the [React Star Ratings component](https://github.com/eka
 
 After deploying the web part, you can add it to any page in your SharePoint site.
 Configure the required properties in the web part settings panel, such as the lists for user feedback and feedback detail.
+
+## Regards - Shashika Hettiarachchi ❤️
